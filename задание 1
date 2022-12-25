@@ -1,0 +1,19 @@
+string = input()
+a = []
+b = []
+good = False
+for i in range(len(string)):
+    if string[i] == "(":
+        a.append("(")
+        b.append(string[i])
+    else:
+        if len(b) == 0:
+            print(i, string[i])
+            good = True
+            break
+        else:
+            a.pop()
+            b.pop()
+
+if len(b) != 0 and not good:
+    print("it is ok")
